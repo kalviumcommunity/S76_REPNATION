@@ -1,0 +1,11 @@
+{
+  "name": "s76_repnation-n",
+  "version": "1.0.0",
+  "description": "Ultimate Exercise Guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pawin",
+  "license": "ISC"
+}
