@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Repnation",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

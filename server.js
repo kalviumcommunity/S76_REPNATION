@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+    res.send('Welcome to RepNation - Your Ultimate Exercise Guide!');
+});
+
 // Ping route
 app.get('/ping', (req, res) => {
     res.json({ message: 'pong' });
