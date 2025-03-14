@@ -1,23 +1,51 @@
+require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+const MONGO_URI = process.env.MONGO_URI;
 
-app.get('/', (req, res) => {
-    res.send('Welcome to RepNation - Your Ultimate Exercise Guide!');
+// Connect to MongoDB
+mongoose
+    .connect(MONGO_URI)
+    .then(() => console.log('Connected to MongoDB ✅'))
+    .catch(err => {
+        console.error('❌ MongoDB connection error:', err);
+        process.exit(1);
+    });
+
+// Check Database Connection Status
+app.get('/', async (req, res) => {
+    const dbStatus = mongoose.connection.readyState;
+    let statusMessage = '';
+
+    switch (dbStatus) {
+        case 0:
+            statusMessage = 'Disconnected';
+            break;
+        case 1:
+            statusMessage = 'Connected';
+            break;
+        case 2:
+            statusMessage = 'Connecting';
+            break;
+        case 3:
+            statusMessage = 'Disconnecting';
+            break;
+        default:
+            statusMessage = 'Unknown State';
+    }
+
+    res.json({
+        message: 'Welcome to RepNation - Your Ultimate Exercise Guide!',
+        database_status: statusMessage
+    });
 });
 
 // Ping route
 app.get('/ping', (req, res) => {
     res.json({ message: 'pong' });
-});
-
-
-describe('GET /', () => {
-    it('should return the welcome message', async () => {
-        const res = await request(app).get('/');
-        expect(res.statusCode).toBe(200);
-        expect(res.text).toBe('Welcome to RepNation - Your Ultimate Exercise Guide!');
-    });
 });
 
 // Start the server with error handling
