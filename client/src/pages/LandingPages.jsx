@@ -53,12 +53,13 @@ const RepNationLanding = () => {
           </button>
           
           <div className="md:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white focus:outline-none"
-            >
-              <ChevronDown />
-            </button>
+          <button 
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="text-white focus:outline-none"
+  aria-label="Toggle menu"
+>
+  <ChevronDown />
+</button>
           </div>
         </div>
         
