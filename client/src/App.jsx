@@ -1,9 +1,15 @@
-const App = () => {
+// import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RepNationLanding from './pages/LandingPages';
+
+function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100 text-2xl font-bold text-blue-600">
-      Welcome to RepNation - Your Ultimate Exercise Guide!
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<RepNationLanding />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
