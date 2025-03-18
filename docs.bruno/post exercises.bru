@@ -6,6 +6,18 @@ meta {
 
 post {
   url: http://localhost:3000/api/exercises
-  body: none
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "Incline ",
+    "category": "Chest",
+    "equipment": "Dumbbell",
+    "muscles_targeted": ["Upper Chest", "Triceps", "Shoulders"],
+    "difficulty": "Intermediate",
+    "video_link": "https://youtube.com/shorts/ou6s32mJgjU?feature=shared"
+  }
+  
 }
