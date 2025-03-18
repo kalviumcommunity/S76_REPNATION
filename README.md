@@ -21,6 +21,9 @@ RepNation is a comprehensive fitness website that helps users learn about differ
 
 ## Backend Deployment
 https://s76-repnation-2.onrender.com
+
+## Frontend  Deployment
+https://b75e9343.repnation.pages.dev/
 ## Contact
 For any inquiries or feedback, feel free to reach out at [your email/contact info].
 

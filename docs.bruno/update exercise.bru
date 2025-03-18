@@ -5,11 +5,13 @@ meta {
 }
 
 put {
-  url: http://localhost:3000/api/exercises/:id
-  body: none
+  url: http://localhost:3000/api/exercises/67d3f0a4833779de792ce3e3
+  body: json
   auth: none
 }
 
-params:path {
-  id: 
+body:json {
+  {
+    "equipment": "dumbbell"
+  }
 }
