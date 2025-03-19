@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, PlayCircle, Dumbbell, Users, BookOpen, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import image1 from "../assets/imageOne.jpg"
 import benchPressImg from "../assets/bench-press.jpg";
 import squatImg from "../assets/squat.jpg";
@@ -88,9 +89,9 @@ const RepNationLanding = () => {
               RepNation helps you understand which muscles you&apos;re working and how to perform exercises correctly with HD video demonstrations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition">
+              <Link to="/exercises" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition">
                 Get Started
-              </button>
+              </Link>
               <button className="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-bold py-3 px-8 rounded-full transition flex items-center justify-center">
                 <PlayCircle className="mr-2" />
                 Watch Demo
