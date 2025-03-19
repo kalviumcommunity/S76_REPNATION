@@ -1,5 +1,6 @@
 const exerciseData = [
   {
+    id: 'exercise-1',
     name: "Incline Dumbbell Press",
     category: "Chest",
     equipment: "Dumbbell",
@@ -8,6 +9,7 @@ const exerciseData = [
     video_link: "https://youtube.com/shorts/ou6s32mJgjU?feature=shared"
   },
   {
+    id: 'exercise-2',
     name: "Barbell Squat",
     category: "Legs",
     equipment: "Barbell",
@@ -16,6 +18,7 @@ const exerciseData = [
     video_link: "https://youtube.com/shorts/QZpHwzT4qXs?feature=shared"
   },
   {
+    id: 'exercise-3',
     name: "Deadlift",
     category: "Back",
     equipment: "Barbell",
@@ -24,6 +27,7 @@ const exerciseData = [
     video_link: "https://youtube.com/shorts/Z4fsaRSLyKo?feature=shared"
   },
   {
+    id: 'exercise-4',
     name: "Pull-up",
     category: "Back",
     equipment: "Pull-up Bar",
@@ -39,8 +43,8 @@ const Exercises = () => {
       <h2 className="text-4xl font-extrabold text-white text-center mb-12">Featured Exercises</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
-        {exerciseData.map((exercise, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+        {exerciseData.map((exercise) => (
+          <div key={exercise.id} className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="p-6">
               <h3 className="text-2xl font-semibold text-blue-600 mb-4">{exercise.name}</h3>
               <div className="mb-4">
@@ -68,6 +72,7 @@ const Exercises = () => {
                   href={exercise.video_link}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Watch tutorial for ${exercise.name} on YouTube`} 
                   className="bg-blue-600 text-white py-3 px-8 rounded-full hover:bg-blue-700 transition"
                 >
                   Watch Tutorial
